@@ -61,7 +61,7 @@ const Individualpage = ({ params }) => {
         <div className='flex flex-col justify-between'>
           <div>
             <p className='text-[#262626] font-bold text-[28px]'>{Item?.title}</p>
-            <p className='text-[#4F4F4F] font-bold text-[28px]'>(Your Kitchen's New Best Friend!)</p>
+            <p className='text-[#4F4F4F] font-bold text-[28px]'>(Your Kitchen&apos;s New Best Friend!)</p>
             <p className='text-[#757575] font-bold text-base capitalize leading-7 tracking-[0.32px]'>{Item?.description}</p>
           </div>
           <div className='flex flex-col gap-3'>

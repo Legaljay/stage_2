@@ -29,7 +29,7 @@ const Testimonials = () => {
       </li>
       <li className="mb-4">
         <p className="font-medium">
-          Absolutely love the blue color! It's a great addition to my kitchen.
+          Absolutely love the blue color! It&apos;s a great addition to my kitchen.
         </p>
         <p className="font-semibold">
           - Taylor S.
@@ -37,7 +37,7 @@ const Testimonials = () => {
       </li>
       <li className="mb-4">
         <p className="font-medium">
-          Fantastic set! Durable, easy to use, and looks great. Couldn't be happier.
+          Fantastic set! Durable, easy to use, and looks great. Couldn&apos;t be happier.
         </p>
         <p className="font-semibold">
           - Morgan P.
