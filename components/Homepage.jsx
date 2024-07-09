@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import rocket from "@icons/rocket.svg";
 import like from "@icons/likeIcon.svg";
-import phone from "@icons/phoneCall.svg";
+import phone from "@icons/phonecall.svg";
 import truck from "@icons/truck.svg";
 import Hero from "@images/hero.png";
 import StarRating from "./StarRating";
