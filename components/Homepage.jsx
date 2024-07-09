@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import rocket from "@icons/rocket.svg";
 import like from "@icons/likeIcon.svg";
+import likedIcon from '@icons/likedIcon.png'
 import phone from "@icons/phonecall.svg";
 import truck from "@icons/truck.svg";
 import Hero from "@images/hero.png";
@@ -34,12 +35,18 @@ const Features = [
 
 const HomePage = () => {
   const { push } = useRouter();
-  const [ liked, setLiked ] = useState(false);
   const { data, cartItems } = useCart();
   console.log(cartItems, "Cart");
   const StoreItems = data.slice(0,8);
   const NewArrival = data.slice(8, )
+  const [likedItems, setLikedItems] = useState(Array(StoreItems.length).fill(false));
   const [mobile, setIsMobile] = useState(false);
+
+  const handleLike = (index) => {
+    setLikedItems((prev) =>
+      prev.map((liked, i) => (i === index ? !liked : liked))
+    );
+  };
   useEffect(() => {
     const handleResize = () => {
       const isMobileDevice = window.innerWidth <= 768;
@@ -59,9 +66,9 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="relative">
         <Image src={Hero} alt="hero-picture" />
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="md:w-[600px] xl:w-[1140px] pl-0 ml:pl-[100px]">
-            <h1 className="w-[250px] md:w-[624px] text-2xl md:text-[72px] font-bold text-white leading">
+        <div className="absolute inset-0 flex items-center justify-start md:justify-center bg-black bg-opacity-50">
+          <div className="md:w-[600px] xl:w-[1140px] pl-[100px] md:pl-0 xl:pl-[100px]">
+            <h1 className="w-[250px] md:w-[624px] text-2xl md:text-[60px] lg:text-[72px] font-bold text-white md:leading-[68px] lg:leading-[80px] lg:tracking-[1.44px]">
               Kitchen Cooking Wares
             </h1>
           </div>
@@ -81,10 +88,10 @@ const HomePage = () => {
                 alt={item.title}
                 width={54}
                 height={54}
-                className="p-3 border-r-2 border-[#757575]"
+                className="w-[24px] md:w-[54px] h-[24px] md:h-[54px] p-3 border-b-2 md:border-r-2 border-[#757575]"
               />
               <div className="flex flex-col py-1 px-2">
-                <span className="mt-2 text-base text-[#454545] font-bold">
+                <span className="mt-2 text-xs md:text-base text-[#454545] font-bold">
                   {item.title}
                 </span>
                 <span className={textMutedForeground}>{item.mode}</span>
@@ -154,13 +161,13 @@ const HomePage = () => {
                     className="w-full"
                   />
                   <div className="absolute top-0 right-0">
-                    <div className="p-[10px]" onClick={() => setLiked(prev => !prev)}>
+                    <div className="p-[10px]" onClick={() => handleLike(index)}>
                       <Image
-                        src={liked ? likedIcon : like}
+                        src={likedItems[index] ? likedIcon : like}
                         alt="like button"
                         width={20}
                         height={20}
-                        className="w-full cursor-pointer"
+                        className={`${likedItems[index]? "w-[20px] h-[20px]": "w-[20px] h-[20px]"} w-full cursor-pointer`}
                       />
                     </div>
                   </div>
