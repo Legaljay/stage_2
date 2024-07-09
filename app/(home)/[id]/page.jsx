@@ -9,7 +9,7 @@ import AddInfo from '@/components/AddInfo';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/providers/CartProvider';
 
-const page = ({ params }) => {
+const Individualpage = ({ params }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [count, setCount] = useState(0);
   const { push } = useRouter();
@@ -112,4 +112,4 @@ const page = ({ params }) => {
   )
 }
 
-export default page
+export default Individualpage

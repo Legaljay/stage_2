@@ -5,7 +5,7 @@ import Notify from '@/components/Notify';
 import { useCart } from '@/providers/CartProvider';
 import React from 'react'
 
-const page = () => {
+const Checkoutpage = () => {
     const { cartItems } = useCart();
   return (
     <div>
@@ -16,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Checkoutpage
