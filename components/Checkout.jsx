@@ -130,7 +130,7 @@ const Checkout = () => {
             <span>Total:</span>
             <span>${total.toFixed(2)}</span>
           </div>
-          <button onClick={() => push('checkout/success')} className="w-full rounded-md bg-neutral-800 text-neutral-100 py-3 mt-4 text-xl font-bold capitalize leading-7 tracking-tight">
+          <button onClick={() => {setCartItems([]); push('checkout/success')}} className="w-full rounded-md bg-neutral-800 text-neutral-100 py-3 mt-4 text-xl font-bold capitalize leading-7 tracking-tight">
             Checkout
           </button>
         </div>

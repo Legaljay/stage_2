@@ -75,7 +75,7 @@ const NavBar = () => {
           )}
         </div>
         <div className="flex items-center gap-2">
-          <button className="px-4 py-2 rounded-lg bg-[#D1D1D1] w-[56px] h-[56px] relative">
+          <button onClick={() => push('/checkout')} className="px-4 py-2 rounded-lg bg-[#D1D1D1] w-[56px] h-[56px] relative">
             <Image src={shop} alt="Cart Icon" width={20} height={20} />
             {qttytotal > 0 && (
               <span className="absolute -top-2 -right-2 bg-[#5D5D5D] text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
