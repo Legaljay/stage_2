@@ -33,7 +33,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className="p-6 bg-[#F6F6F6] shadow-md">
+    <header className="p-4 md:p-6 bg-[#F6F6F6] border-b border-gray-300">
       <div className="flex justify-between items-center w-[95%] md:w-[82.29%] mx-auto">
         <div className="flex flex-col gap-1 md:gap-4 text-xs md:text-[28px] font-bold ">
           <span className="text-[#262626]">Culinary</span>
