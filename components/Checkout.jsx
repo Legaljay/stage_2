@@ -169,7 +169,7 @@ const Mobile = ({ cartItems, deleteItem, total, handleQuantityChange }) => {
               <div className="font-bold text-[#454545] tracking-[0.32px] leading-6 capitalize">
                 <h3 className="">{item.title}</h3>
                 <p className="">
-                  (Your Kitchen's New Best Friend!)
+                  (Your Kitchen&lsquo;s New Best Friend!)
                 </p>
               </div>
               <div className="flex items-center mt-4">
