@@ -3,10 +3,12 @@ import Image from "next/image";
 import { useCart } from "@/providers/CartProvider";
 import deleteIcon from "@icons/delete.svg";
 import useScreenSize from "@/hooks/useScreenSize";
+import { useRouter } from "next/navigation";
 
 const Checkout = () => {
   const { cartItems, setCartItems } = useCart();
   const { mobile, setIsMobile } = useScreenSize();
+  const { push } = useRouter();
 
   const handleQuantityChange = (id, change) => {
     setCartItems((prevItems) =>
@@ -34,18 +36,23 @@ const Checkout = () => {
       <main className="mt-0 md:mt-4 flex flex-col w-[95%] md:w-[82.29%] mx-auto">
         <h1 className="text-2xl font-bold p-2 border-b">Checkout</h1>
         <table className="w-full border-collapse">
-            {!mobile &&
-                <thead>
-                    <tr className="border-b text-neutral-500 md:text-sm lg:text-lg xl:text-xl capitalize leading-loose tracking-tight">
-                    <th className="text-left pt-4 pb-4 pr-4 pl-[150px]">Product</th>
-                    <th className="text-left p-4">Price</th>
-                    <th className="text-left p-4">Quantity</th>
-                    <th className="text-left p-4">Total</th>
-                    </tr>
-                </thead>
-            }
+          {!mobile && (
+            <thead>
+              <tr className="border-b text-neutral-500 md:text-sm lg:text-lg xl:text-xl capitalize leading-loose tracking-tight">
+                <th className="text-left pt-4 pb-4 pr-4 pl-[150px]">Product</th>
+                <th className="text-left p-4">Price</th>
+                <th className="text-left p-4">Quantity</th>
+                <th className="text-left p-4">Total</th>
+              </tr>
+            </thead>
+          )}
           {mobile ? (
-            <Mobile cartItems={cartItems} deleteItem={handleDelete} handleQuantityChange={handleQuantityChange} total={total}/>
+            <Mobile
+              cartItems={cartItems}
+              deleteItem={handleDelete}
+              handleQuantityChange={handleQuantityChange}
+              total={total}
+            />
           ) : (
             <tbody>
               {cartItems.map((item, i) => (
@@ -71,7 +78,9 @@ const Checkout = () => {
                         onClick={() => handleQuantityChange(item.id, -1)}
                         className="w-7 md:w-9 aspect-square text-[#262626] bg-[#B0B0B0] text-xl cursor-pointer"
                       >
-                        <span className="p-2 md:text-sm lg:text-xl xl:text-4xl">-</span>
+                        <span className="p-2 md:text-sm lg:text-xl xl:text-4xl">
+                          -
+                        </span>
                       </button>
                       <span className="px-4 md:text-sm lg:text-base xl:text-xl font-bold">
                         {item.quantity}
@@ -80,7 +89,9 @@ const Checkout = () => {
                         onClick={() => handleQuantityChange(item.id, 1)}
                         className="w-7 md:w-9 aspect-square text-[#262626] bg-[#B0B0B0] text-xl cursor-pointer"
                       >
-                        <span className="p-2 md:text-base lg:text-2xl xl:text-4xl">+</span>
+                        <span className="p-2 md:text-base lg:text-2xl xl:text-4xl">
+                          +
+                        </span>
                       </button>
                     </div>
                   </td>
@@ -119,7 +130,7 @@ const Checkout = () => {
             <span>Total:</span>
             <span>${total.toFixed(2)}</span>
           </div>
-          <button className="w-full rounded-md bg-neutral-800 text-neutral-100 py-3 mt-4 text-xl font-bold capitalize leading-7 tracking-tight">
+          <button onClick={() => push('checkout/success')} className="w-full rounded-md bg-neutral-800 text-neutral-100 py-3 mt-4 text-xl font-bold capitalize leading-7 tracking-tight">
             Checkout
           </button>
         </div>
@@ -145,7 +156,7 @@ const Mobile = ({ cartItems, deleteItem, total, handleQuantityChange }) => {
               />
               <button
                 onClick={() => deleteItem(item.id)}
-                className="absolute top-2 left-2 bg-white rounded-full p-1 shadow-md"
+                className="absolute top-2 left-2 p-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -168,24 +179,24 @@ const Mobile = ({ cartItems, deleteItem, total, handleQuantityChange }) => {
             <div className="flex flex-col justify-between h-full">
               <div className="font-bold text-[#454545] tracking-[0.32px] leading-6 capitalize">
                 <h3 className="">{item.title}</h3>
-                <p className="">
-                  (Your Kitchen&lsquo;s New Best Friend!)
-                </p>
+                <p className="">(Your Kitchen&lsquo;s New Best Friend!)</p>
               </div>
               <div className="flex items-center mt-4">
-                <button
-                  onClick={() => handleQuantityChange(item.id, -1)}
-                  className="px-2 py-1 border rounded bg-gray-200"
-                >
-                  -
-                </button>
-                <span className="px-4">{item.quantity}</span>
-                <button
-                  onClick={() => handleQuantityChange(item.id, 1)}
-                  className="px-2 py-1 border rounded bg-gray-200"
-                >
-                  +
-                </button>
+                <div className="flex justify-center items-center border border-[#B0B0B0] h-fit w-fit">
+                  <button
+                    onClick={() => handleQuantityChange(item.id, -1)}
+                    className="px-2 py-1 border text-[#262626] bg-[#B0B0B0] cursor-pointer"
+                  >
+                    -
+                  </button>
+                  <span className="px-4">{item.quantity}</span>
+                  <button
+                    onClick={() => handleQuantityChange(item.id, 1)}
+                    className="px-2 py-1 border text-[#262626] bg-[#B0B0B0] cursor-pointer"
+                  >
+                    +
+                  </button>
+                </div>
                 <span className="ml-auto text-lg font-bold">
                   ${total.toFixed(2)}
                 </span>
