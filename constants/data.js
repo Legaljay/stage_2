@@ -40,7 +40,7 @@ export const mergedItems = [
   },
   {
     id: "item3",
-    image: Cbc,
+    image: Ebc,
     rating: 3,
     title: "Blue Cookware Set",
     desc: "Your Kitchen's New Best Friend!",
@@ -66,7 +66,7 @@ export const mergedItems = [
   },
   {
     id: "item5",
-    image: Ebc,
+    image: Cbc,
     rating: 3,
     title: "Hammered Black 15 Piece Nonstick Cookware Set",
     desc: "Your Kitchen's New Best Friend!",
@@ -129,7 +129,7 @@ export const mergedItems = [
     quantity: 0,
   },
   {
-    id: "item9",
+    id: "item11",
     image: Top2,
     rating: 3,
     title: "Dark blue non stick pot set",
@@ -141,7 +141,7 @@ export const mergedItems = [
     quantity: 0,
   },
   {
-    id: "item9",
+    id: "item12",
     image: Top1,
     rating: 3,
     title: "Red non stick 3-pot set",

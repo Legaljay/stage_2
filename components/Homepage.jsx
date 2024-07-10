@@ -119,7 +119,7 @@ const HomePage = () => {
                     <h3 className="text-white text-center text-lg font-bold mb-2 leading-6 tracking-wide break-words">
                       {item.description}
                     </h3>
-                    <button className="flex px-2 py-1 bg-neutral-100 rounded justify-center items-center gap-2.5">
+                    <button onClick={() => push(`/${index + 8}`)} className="flex px-2 py-1 bg-neutral-100 rounded justify-center items-center gap-2.5">
                       <p className="text-neutral-800 text-xs font-bold capitalize leading-none tracking-tight">View Details</p>
                     </button>
                   </div>
@@ -161,7 +161,7 @@ const HomePage = () => {
                     className="w-full"
                   />
                   <div className="absolute top-0 right-0">
-                    <div className="p-[10px]" onClick={() => handleLike(index)}>
+                    <div role="button" className="p-[10px]" onClick={() => handleLike(index)}>
                       <Image
                         src={likedItems[index] ? likedIcon : like}
                         alt="like button"
