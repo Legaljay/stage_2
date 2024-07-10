@@ -2,7 +2,7 @@ import React from 'react';
 
 const Testimonials = () => {
   return (
-    <ol className="text-gray-600 text-lg font-inter capitalize leading-7 tracking-wide break-words list-decimal pl-5">
+    <ol className="text-gray-600 text-sm md:text-lg capitalize leading-[24px] md:leading-7 tracking-wide break-words list-decimal pl-5">
       <li className="mb-4">
         <p className="font-medium">
           This cookware set is a game-changer! Love the non-stick feature. Highly recommend!

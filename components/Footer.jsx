@@ -80,12 +80,12 @@ const Footer = () => {
                         type="email"
                         placeholder="Your email address"
                         value={mail}
-                        className="px-5 py-3 xl:p-5 rounded-[5px] outline-none"
+                        className="w-full md:w-3/4 lg:w-3/5 px-5 py-3 xl:p-5 rounded-lg md:rounded-[5px] outline-none placeholder:text-[8px] md:placeholder:text-base"
                         onChange={(e) => {
                         setMail(e.target.value);
                         }}
                     />
-                    <button disabled={pending} type="submit" className="-ml-5 md:ml-0 xl:ml-0 xl:animate-bounce px-5 py-3.5 xl:p-5 rounded-[5px] text-[12px] md:text-base text-white bg-[#555]">Subscribe</button>
+                    <button disabled={pending} type="submit" className="-ml-20 md:ml-0 xl:ml-0 xl:animate-bounce px-5 py-3.5 xl:p-5 rounded-lg md:rounded-[5px] text-[12px] md:text-base text-white bg-[#555]">Subscribe</button>
                 </div>
                 <ul className="">
                    <li className="text-white opacity-50 text-sm">Subscribe to our newsletter and we will inform you about latest

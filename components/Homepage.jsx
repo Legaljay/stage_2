@@ -20,7 +20,6 @@ const textPrimary = "text-primary";
 const textMutedForeground = "text-[8px] md:text-sm text-[#5D5D5D] font-bold";
 
 const Features = [
-  { image: rocket, title: "Worldwide Shipping", mode: "On Order Over 4 Items" },
   {
     image: truck,
     title: "14-Days Money Back Guarantee",
@@ -31,6 +30,7 @@ const Features = [
     title: "24/7 Full Customer Support",
     mode: "To All Our Items",
   },
+  { image: rocket, title: "Worldwide Shipping", mode: "On Order Over 4 Items" },
 ];
 
 const HomePage = () => {
@@ -65,22 +65,22 @@ const HomePage = () => {
     <div className="bg-[#E7E7E7] text-foreground pb-28">
       {/* Hero Section */}
       <section className="relative">
-        <Image src={Hero} alt="hero-picture" />
+        <Image src={Hero} alt="hero-picture" className="h-[200px] md:h-auto"/>
         <div className="absolute inset-0 flex items-center justify-start md:justify-center bg-black bg-opacity-50">
-          <div className="md:w-[600px] xl:w-[1140px] pl-[100px] md:pl-0 xl:pl-[100px]">
-            <h1 className="w-[250px] md:w-[624px] text-2xl md:text-[60px] lg:text-[72px] font-bold text-white md:leading-[68px] lg:leading-[80px] lg:tracking-[1.44px]">
-              Kitchen Cooking Wares
+          <div className="md:w-[600px] xl:w-[1140px] pl-[70px] md:pl-0 xl:pl-[100px]">
+            <h1 className="w-full md:w-[624px] text-2xl md:text-[60px] lg:text-[72px] font-bold text-white md:leading-[68px] lg:leading-[80px] lg:tracking-[1.44px]">
+              Kitchen Cooking <br/> Wares
             </h1>
           </div>
         </div>
       </section>
-      <div className="w-[82.29%] mx-auto">
+      <div className="w-[94%] md:w-[82.29%] mx-auto">
         {/* Features Section */}
-        <section className="flex justify-center items-center py-8 gap-20">
+        <section className="flex flex-wrap md:flex-nowrap justify-center items-center py-8 gap-5 md:gap-20">
           {Features.map((item, index) => (
             <div
               key={item.title}
-              className="flex justify-center items-center gap-2"
+              className="flex flex-col md:flex-row justify-center items-center gap-2"
             >
               <Image
                 aria-hidden="true"
@@ -88,7 +88,7 @@ const HomePage = () => {
                 alt={item.title}
                 width={54}
                 height={54}
-                className="w-[24px] md:w-[54px] h-[24px] md:h-[54px] p-3 border-b-2 md:border-r-2 border-[#757575]"
+                className="w-[40px] md:w-[54px] h-[40px] md:h-[54px] p-2 md:p-3 border-b-2 md:border-b-0 md:border-r-2 lg:border-b-0 lg:border-r-2 border-[#757575]"
               />
               <div className="flex flex-col py-1 px-2">
                 <span className="mt-2 text-xs md:text-base text-[#454545] font-bold">
@@ -104,7 +104,7 @@ const HomePage = () => {
           <p className="w-full text-xl font-bold text-start py-2 border-b border-[#D1D1D1]">
             New Arrivals
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] md:gap-[30px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] md:gap-[30px] px-3 md:px-0">
             {NewArrival.map((item, index) => (
               <div key={index} className={`${cardStyles}`}>
                 <div className="relative group">
