@@ -1,14 +1,14 @@
-import Abc from "@images/A.png";
-import Bbc from "@images/B.png";
-import Cbc from "@images/C.png";
-import Dbc from "@images/D.png";
-import Ebc from "@images/E.png";
-import Fbc from "@images/F.png";
-import Gbc from "@images/G.png";
-import Hbc from "@images/H.png";
-import Top1 from "@images/Top1.png";
-import Top2 from "@images/Top2.png";
-import Top3 from "@images/Top3.png";
+import Abc from "@images/A.svg";
+import Bbc from "@images/B.svg";
+import Cbc from "@images/C.svg";
+import Dbc from "@images/D.svg";
+import Ebc from "@images/E.svg";
+import Fbc from "@images/F.svg";
+import Gbc from "@images/G.svg";
+import Hbc from "@images/H.svg";
+import Top1 from "@images/Top1.svg";
+import Top2 from "@images/Top2.svg";
+import Top3 from "@images/Top3.svg";
 
 
 export const mergedItems = [
